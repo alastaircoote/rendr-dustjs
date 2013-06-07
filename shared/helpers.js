@@ -4,8 +4,8 @@ var _ = require('underscore');
 var BaseView = null,
     modelUtils = null;
 
-module.exports = function(Handlebars, getTemplate) {
-  var oldEach = Handlebars.helpers.each;
+module.exports = function(Dust, getTemplate) {
+  var oldEach = Dust.helpers.each;
 
   return {
     view: function(viewName, block) {

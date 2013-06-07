@@ -1,25 +1,25 @@
 {
-  "name": "rendr-handlebars",
+  "name": "rendr-dustjs",
   "version": "0.0.1",
-  "description": "Glue handlebars templates into a Rendr app.",
+  "description": "Glue dustjs templates into a Rendr app.",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
     "type": "git",
-    "url": "http://github.com/airbnb/rendr-handlebars.git"
+    "url": "https://github.com/alastaircoote/rendr-dustjs.git"
   },
   "peerDependencies": {
     "rendr": "0.4.6-rc.1"
   },
   "dependencies": {
     "underscore": "~1.4.4",
-    "handlebars": "git://github.com/spikebrehm/handlebars.js.git#0687c7016c62122ab160a8683817a931b03354ad"
+    "dustjs-linkedin": "~1.2.5"
   },
   "keywords": [
     "rendr",
-    "handlebars",
+    "dustjs",
     "templates"
   ],
   "author": "",
