@@ -8,7 +8,25 @@ exports.Dust = Dust;
 /**
  * `getTemplate` is available on both client and server.
  */
-exports.getTemplate = require('./shared/templateFinder')(Dust).getTemplate;
+var templates = null;
+exports.getTemplate = function(templateName) {
+      /**
+       * Allow compiledTemplates to be created asynchronously.
+       */
+       if (!templates) {
+        templates = require(rendr.entryPath + '/app/templates/compiledTemplates');
+        templates(Dust);
+       }
+
+      return function(data) {
+        html = ""
+        Dust.render(templateName,data,function(err,out) {
+            html = out;
+        })
+        return html;
+      }
+    }
+
 
 /**
  * `getLayout` should only be used on the server.
@@ -28,6 +46,7 @@ exports.renderTemplate = function(name, data, cb) {
 /**
  * Register helpers, available on both client and server.
  */
+ /*
 var dustHelpers = require('./shared/helpers')(Dust, exports.getTemplate);
 
 for (var key in dustHelpers) {
@@ -36,3 +55,4 @@ for (var key in dustHelpers) {
   Dust.helpers[key] = dustHelpers[key];
 }
 
+*/
